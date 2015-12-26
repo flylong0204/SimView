@@ -9,6 +9,9 @@
 #ifndef _PUBLIC_SINGLETON_H_
 #define _PUBLIC_SINGLETON_H_
 
+#include <assert.h>
+#include <stdlib.h>
+
 namespace SimView
 {
 	template <typename T>
@@ -17,27 +20,37 @@ namespace SimView
 	public:
 		explicit CSingleton(void)
 		{
-			assert(!ms_Singleton);
+			assert(!m_pSingleton);
 #if defined( _MSC_VER ) && _MSC_VER < 1200       
 			int offset = (int)(T*)1 - (int)(Singleton <T>*)(T*)1;
-			ms_Singleton = (T*)((int)this + offset);
+			m_pSingleton = (T*)((int)this + offset);
 #else  
-			ms_Singleton = static_cast< T* >(this);
+			m_pSingleton = static_cast< T* >(this);
 #endif  
 		}
 		virtual ~CSingleton(void)
 		{
-			assert(ms_Singleton);  ms_Singleton = 0;
+			assert(m_pSingleton);  m_pSingleton = 0;
 		}
-		static T& getSingleton(void)
+		static T& GetSingleton(void)
 		{
-			assert(ms_Singleton);  return (*ms_Singleton);
+			assert(m_pSingleton);  return (*m_pSingleton);
 		}
-		static T* getSingletonPtr(void)
+		static T* GetSingletonPtr(void)
 		{
-			return ms_Singleton;
+			return m_pSingleton;
 		}
+
+	protected:
+		static T* m_pSingleton;
+
+	private:
+		CSingleton(const CSingleton<T> &);
+		CSingleton& operator=(const CSingleton<T> &);
 	};
+
+	template<class T>
+	T* CSingleton<T>::m_pSingleton = NULL;
 }
 
 #endif // _PUBLIC_SINGLETON_H_

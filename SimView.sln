@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kerner", "Kerner\Kerner.vcxproj", "{9D384B59-3DBC-495F-B7F3-B48066CB53D0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainUI", "MainUI\MainUI.vcxproj", "{577ECFFC-1EC2-44BE-83A9-76217E8DD201}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OsgRender", "OsgRender\OsgRender.vcxproj", "{5E7B22BD-D422-49B2-9A54-17CBB260FC5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +19,14 @@ Global
 		{9D384B59-3DBC-495F-B7F3-B48066CB53D0}.Debug|Win32.Build.0 = Debug|Win32
 		{9D384B59-3DBC-495F-B7F3-B48066CB53D0}.Release|Win32.ActiveCfg = Release|Win32
 		{9D384B59-3DBC-495F-B7F3-B48066CB53D0}.Release|Win32.Build.0 = Release|Win32
+		{577ECFFC-1EC2-44BE-83A9-76217E8DD201}.Debug|Win32.ActiveCfg = Debug|Win32
+		{577ECFFC-1EC2-44BE-83A9-76217E8DD201}.Debug|Win32.Build.0 = Debug|Win32
+		{577ECFFC-1EC2-44BE-83A9-76217E8DD201}.Release|Win32.ActiveCfg = Release|Win32
+		{577ECFFC-1EC2-44BE-83A9-76217E8DD201}.Release|Win32.Build.0 = Release|Win32
+		{5E7B22BD-D422-49B2-9A54-17CBB260FC5B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E7B22BD-D422-49B2-9A54-17CBB260FC5B}.Debug|Win32.Build.0 = Debug|Win32
+		{5E7B22BD-D422-49B2-9A54-17CBB260FC5B}.Release|Win32.ActiveCfg = Release|Win32
+		{5E7B22BD-D422-49B2-9A54-17CBB260FC5B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

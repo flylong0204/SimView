@@ -13,23 +13,125 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{aab8fe7e-0e9c-4783-8ff3-5d949860a81f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Public\Kerner\DynamicLib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Expection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="PluginManage.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\ThreadDepend.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\ILog.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Tool.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IPluginManage.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\ILogManage.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Kerner.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IApplication.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="DynLibManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IDynLibManage.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IPlugin.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IComFaceBase.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="ComEnumerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\PluginImp.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Plugin.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\SimViewThread.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\ApplicationImp.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IRenderable.h">
+      <Filter>Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\Public\Kerner\Singleton.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Platform.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="GUID.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\BaseHeader.h">
-      <Filter>头文件</Filter>
+      <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="..\Public\Kerner\IPluginManage.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="CPoint2D.h">
+      <Filter>Public</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PluginManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicLib.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Expection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DynLibManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ComEnumerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimViewThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GUID.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

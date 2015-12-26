@@ -11,15 +11,29 @@
 
 #pragma once
 
-#include "Singleton.h"
-
 namespace SimView
 {
-	class IPluginManage : public CSingleton<IPluginManage>
+	class IComBaseFactory;
+	class IComFaceBase;
+	class IPlugin;
+
+	class KERNER_DLL IPluginManage : public CSingleton<IPluginManage>
 	{
 	public:
 		// 析构函数  
 		virtual ~IPluginManage(void) { }
+		// 添加工厂对象
+		virtual void AddFactory(IComBaseFactory* pIFactory) = 0;
+		// 移除工厂对象
+		virtual void RemoveFactory(IComBaseFactory* pIFactory) = 0;
+		// 获得插件对象
+		virtual IComFaceBase* GetComInstance(const SVString& strName) = 0;
+		// 导入插件
+		virtual bool LoadCom(const SVString& strComPath) = 0;
+		// 安装插件
+		virtual void Install(IPlugin* pIPlugin) = 0;
+		// 卸载插件
+		virtual void Uninstall(IPlugin* pIPlugin) = 0;
 	};
 }
 
