@@ -102,6 +102,12 @@
     <ClInclude Include="CPoint2D.h">
       <Filter>Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\Kerner\CPoint3D.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IEntity.h">
+      <Filter>Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PluginManage.cpp">
