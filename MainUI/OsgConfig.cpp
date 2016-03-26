@@ -29,7 +29,7 @@ SVString COsgConfig::GetName(void) const
 void COsgConfig::InitManipulator(osgGA::KeySwitchMatrixManipulator* pMainpulator)
 {
 	osgGA::TrackballManipulator* pTrackball = new osgGA::TrackballManipulator;
-	pMainpulator->addMatrixManipulator('1', "Trackball", pTrackball);
+	pMainpulator->addMatrixManipulator(1, "Trackball", pTrackball);
 	pMainpulator->selectMatrixManipulator(0);
 
 }
@@ -43,8 +43,8 @@ void COsgConfig::InitContextTraits(osg::GraphicsContext::Traits* pTraits)
 	osg::ref_ptr<osg::Referenced> windata = new osgViewer::GraphicsWindowWin32::WindowData(m_hWnd);
 
 	// Setup the traits parameters
-	pTraits->x = 0;
-	pTraits->y = 0;
+	pTraits->x = rect.left;
+	pTraits->y = rect.top;
 	pTraits->width = rect.right - rect.left;
 	pTraits->height = rect.bottom - rect.top;
 	pTraits->windowDecoration = false;

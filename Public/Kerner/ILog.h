@@ -12,7 +12,7 @@ change outher :
 
 namespace SimView
 {
-	class KERNER_DLL ILog
+	class KERNER_EXPORT ILog
 	{
 	public:
 		enum LogLevel

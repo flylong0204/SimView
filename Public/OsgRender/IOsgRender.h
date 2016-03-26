@@ -25,6 +25,7 @@ namespace SimView
 	const SVString COMDIR_OSGRENDER = "use osg render the osg node";
 
 	class IOsgViewConfig;
+	class IOsgView;
 
 	class OSGRENDER_EXPORT IOsgRender : public IComFaceBase
 	{
@@ -33,8 +34,10 @@ namespace SimView
 		virtual ~IOsgRender() { }
 		// 创建视图
 		virtual void CreateView(IOsgViewConfig* pIOsgViewConfig) = 0;
+		// 获得试图
+		virtual IOsgView* GetView(const SVString& strViewName) const = 0;
 		// 添加渲染节点
-		virtual void AddRenderObj(void* pRenderObj, const SVString& strViewName = "MainView") = 0;
+		virtual void AddRenderObj(DrawObj* pRenderObj, const SVString& strViewName = "MainView") = 0;
 		// 单独线程运行
 		virtual void RunByThread(void) = 0;
 	};

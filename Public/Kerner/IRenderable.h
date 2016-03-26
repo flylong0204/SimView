@@ -12,7 +12,7 @@ change outher :
 
 namespace SimView
 {
-	class KERNER_DLL IRenderable
+	class KERNER_EXPORT IRenderable
 	{
 	public:
 		// Îö¹¹º¯Êý

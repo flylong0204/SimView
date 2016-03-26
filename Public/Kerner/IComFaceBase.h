@@ -12,7 +12,7 @@ change outher :
 
 namespace SimView
 {
-	class KERNER_DLL IComFaceBase
+	class KERNER_EXPORT IComFaceBase
 	{
 	public:
 		// Îö¹¹º¯Êý

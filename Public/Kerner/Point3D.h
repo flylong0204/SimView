@@ -77,14 +77,14 @@ namespace SimView
 	}
 
 	template<typename T>
-	CPoint3D<T>::CPoint3D(const CPoint3D& other)
+	CPoint3D<T>::CPoint3D(const CPoint3D<T>& other)
 		:m_tX(other.m_tX), m_tY(other.m_tY), m_tZ(other.m_tZ)
 	{
 
 	}
 
 	template<typename T>
-	CPoint3D& CPoint3D<T>::operator=(const CPoint3D& other)
+	CPoint3D<T>& CPoint3D<T>::operator=(const CPoint3D<T>& other)
 	{
 		m_tX = other.m_tX;
 		m_tY = other.m_tY;
@@ -94,35 +94,35 @@ namespace SimView
 
 	// ==·ûºÅ
 	template<typename T>
-	bool CPoint3D<T>::operator==(const CPoint3D& other) const
+	bool CPoint3D<T>::operator==(const CPoint3D<T>& other) const
 	{
 		return ((m_tX == other.m_tX) && (m_tY == other.m_tY) && (m_tZ == other.m_tZ));
 	}
 
 	// != ·ûºÅ
 	template<typename T>
-	bool CPoint3D<T>::operator!=(const CPoint3D& other) const
+	bool CPoint3D<T>::operator!=(const CPoint3D<T>& other) const
 	{
 		return ((m_tX != other.m_tX) && (m_tY != other.m_tY) && (m_tZ != other.m_tZ));
 	}
 
 	// < ·ûºÅ
 	template<typename T>
-	bool CPoint3D<T>::operator<(const CPoint3D& other) const
+	bool CPoint3D<T>::operator<(const CPoint3D<T>& other) const
 	{
 		return ((m_tX < other.m_tX) && (m_tY < other.m_tY) && (m_tZ < other.m_tZ));
 	}
 
 	// µã³Ë
 	template<typename T>
-	T CPoint3D<T>::operator*(const CPoint3D& other) const
+	T CPoint3D<T>::operator*(const CPoint3D<T>& other) const
 	{
 		return (m_tX * other.m_tX + m_tY * other.m_tY + m_tZ * other.m_tZ);
 	}
 
 	// ²æ³Ë
 	template<typename T>
-	const CPoint3D CPoint3D<T>::operator ^ (const CPoint3D<T>& other) const
+	const CPoint3D<T> CPoint3D<T>::operator ^ (const CPoint3D<T>& other) const
 	{
 		return CPoint3D(m_tY * other.m_tZ - m_tZ * other.m_tY,
 			m_tZ * other.m_tX - m_tX * other.m_tZ,
@@ -133,14 +133,14 @@ namespace SimView
 
 	// ²æ³Ë
 	template<typename T>
-	CPoint3D CPoint3D<T>::operator* (const T value) const
+	CPoint3D<T> CPoint3D<T>::operator* (const T value) const
 	{
 		return (CPoint3D(m_tX * value, m_tY * value, m_tZ * value));
 	}
 
 	// *=
 	template<typename T>
-	CPoint3D& CPoint3D<T>::operator*=(const T value)
+	CPoint3D<T>& CPoint3D<T>::operator*=(const T value)
 	{
 		m_tX *= value;
 		m_tY *= value;
@@ -150,7 +150,7 @@ namespace SimView
 
 	// /
 	template<typename T>
-	CPoint3D CPoint3D<T>::operator/(const T value) const
+	CPoint3D<T> CPoint3D<T>::operator/(const T value) const
 	{
 		return (CPoint3D(m_tX / value, m_tY / value, m_tZ / value));
 	}
@@ -158,7 +158,7 @@ namespace SimView
 
 	// /=
 	template<typename T>
-	CPoint3D& CPoint3D<T>::operator/=(const T value)
+	CPoint3D<T>& CPoint3D<T>::operator/=(const T value)
 	{
 		m_tX /= value;
 		m_tY /= value;
@@ -168,14 +168,14 @@ namespace SimView
 
 	// +
 	template<typename T>
-	CPoint3D CPoint3D<T>::operator+(const CPoint3D& other) const
+	CPoint3D<T> CPoint3D<T>::operator+(const CPoint3D<T>& other) const
 	{
 		return (CPoint3D(m_tX + other.m_tX, m_tY + other.m_tY, m_tZ + other.m_tZ));
 	}
 
 	// += 
 	template<typename T>
-	CPoint3D& CPoint3D<T>::operator +=(const CPoint3D& other)
+	CPoint3D<T>& CPoint3D<T>::operator +=(const CPoint3D<T>& other)
 	{
 		m_tX += other.m_tX;
 		m_tY += other.m_tY;
@@ -185,14 +185,14 @@ namespace SimView
 
 	// -
 	template<typename T>
-	CPoint3D CPoint3D<T>::operator-(const CPoint3D& other) const
+	CPoint3D<T> CPoint3D<T>::operator-(const CPoint3D<T>& other) const
 	{
 		return (CPoint3D(m_tX - other.m_tX, m_tY - other.m_tY, m_tZ - other.m_tZ));
 	}
 
 	// -= 
 	template<typename T>
-	CPoint3D& CPoint3D::operator -=(const CPoint3D& other)
+	CPoint3D<T>& CPoint3D<T>::operator -=(const CPoint3D<T>& other)
 	{
 		m_tX -= other.m_tX;
 		m_tY -= other.m_tY;
@@ -202,7 +202,7 @@ namespace SimView
 
 	// - È¡·´
 	template<typename T>
-	const CPoint3D CPoint3D<T>::operator-() const
+	const CPoint3D<T> CPoint3D<T>::operator-() const
 	{
 		return (CPoint3D(-m_tX, -m_tY, m_tZ));
 	}
@@ -247,6 +247,10 @@ namespace SimView
 	{
 		return CPoint3D(lhs.m_tX / rhs.m_tX, lhs.m_tY / rhs.m_tY, lhs.m_tZ / rhs.m_tZ);
 	}
+
+	typedef CPoint3D<int> CIntPoint3D;
+	typedef CPoint3D<float> CFloatPoint3D;
+	typedef CPoint3D<double> CDoublePoint3D;
 
 }
 

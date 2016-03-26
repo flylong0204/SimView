@@ -35,7 +35,7 @@ typedef struct HINSTANCE__* hInstance;
 
 namespace SimView
 {
-	class KERNER_DLL CDynamicLib
+	class KERNER_EXPORT CDynamicLib
 	{
 	public:
 		explicit CDynamicLib(const SVString& strName);

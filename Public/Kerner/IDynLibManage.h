@@ -12,7 +12,7 @@ change outher :
 
 namespace SimView
 {
-	class KERNER_DLL IDynLibManage : public CSingleton<IDynLibManage>
+	class KERNER_EXPORT IDynLibManage : public CSingleton<IDynLibManage>
 	{
 	public:
 		// Îö¹¹º¯Êý

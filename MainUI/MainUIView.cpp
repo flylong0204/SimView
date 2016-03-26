@@ -14,6 +14,7 @@
 
 #include "../Public/Kerner/Kerner.h"
 #include "../Public/OsgRender/OsgRender.h"
+#include "../Public/OsgEarth/OsgEarth.h"
 #include "OsgConfig.h"
 
 #ifdef _DEBUG
@@ -161,8 +162,10 @@ void CMainUIView::OnInitialUpdate()
 	//COsgConfig* pOsgConfig = new COsgConfig(m_hWnd);
 	pIOsgRender->CreateView(m_pOsgConfig);
 
-	osg::Node* pNode = osgDB::readNodeFile("D:\\Program Files\\OpenSceneGraph\\OpenSceneGraph-Data\\cow.osg");
-	pIOsgRender->AddRenderObj(pNode);
+	// 调用渲染地球
+	SimView::IOsgEarth* pIOsgEarth = SimView::CApplicationImp<SimView::IOsgEarth\
+	>::GetComposition(SimView::COMNAME_OSGEARTH);
+	pIOsgEarth->DrawEarth();
 
 	// 启动渲染线程
 	pIOsgRender->RunByThread();

@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <osgViewer/View>
 #include <osgGA/KeySwitchMatrixManipulator>
+#include <osgGA/CameraManipulator>
 #include <osg/GraphicsContext>
 #include "../Public/Kerner/Kerner.h"
 #include "../Public/OsgRender/OsgRender.h"
@@ -72,7 +73,7 @@ namespace SimView
 	}
 
 	// 获得视图
-	osgViewer::View* COsgView::GetView(void) const
+	SVView* COsgView::GetView(void) const
 	{
 		return (m_pView);
 	}
@@ -100,6 +101,63 @@ namespace SimView
 			m_pGroup->addChild(pNode);
 		}
 		ILogManage::GetSingleton().RecordLog("添加渲染节点成功");
+	}
+
+	// 添加相机控制器
+	void COsgView::AddCameraManipulator(const SVString& strName, CameraManip* pCameraManipulator)
+	{
+		// 定义类型
+		typedef osgGA::KeySwitchMatrixManipulator::NamedManipulator ManipName;
+		typedef osgGA::KeySwitchMatrixManipulator::KeyManipMap MapKeyManip;
+		MapKeyManip mapKeyManip = m_pKeyswitchManipulator->getKeyManipMap();
+
+		// 遍历查询
+		for (MapKeyManip::const_iterator cstItor = mapKeyManip.begin(); mapKeyManip.end() != cstItor; ++cstItor)
+		{
+			const ManipName& manipName = cstItor->second;
+			if (0 == (strName.compare(manipName.first)))
+			{
+				SIMVIEW_EXCEPT(CSVExpection::ERR_INTERNAL_ERROR, "该名称已经存在", "AddCameraManipulator");
+				break;
+			}
+		}
+
+		osgGA::CameraManipulator* pCm = static_cast<osgGA::CameraManipulator*>(pCameraManipulator);
+		if (NULL == pCm)
+		{
+			return;
+		}
+
+		int nCount = (int)m_pKeyswitchManipulator->getNumMatrixManipulators() +	1;
+
+		m_pKeyswitchManipulator->addMatrixManipulator(nCount, strName, pCm);
+	}
+
+	// 选择操作器
+	void COsgView::SelectCameraManipulator(const SVString& strName)
+	{
+		// 定义类型
+		typedef osgGA::KeySwitchMatrixManipulator::NamedManipulator ManipName;
+		typedef osgGA::KeySwitchMatrixManipulator::KeyManipMap MapKeyManip;
+		MapKeyManip mapKeyManip = m_pKeyswitchManipulator->getKeyManipMap();
+
+		unsigned int nSelect = 1;
+
+		// 遍历查询
+		for (MapKeyManip::const_iterator cstItor = mapKeyManip.begin(); mapKeyManip.end() != cstItor; ++cstItor)
+		{
+			const ManipName& manipName = cstItor->second;
+			if (0 == (strName.compare(manipName.first)))
+			{
+				nSelect = cstItor->first;
+				break;
+			}
+		}
+
+		nSelect -= 1;
+
+		// 设置选择的值
+		m_pKeyswitchManipulator->selectMatrixManipulator(nSelect);
 	}
 
 	// 

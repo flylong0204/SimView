@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Boost;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Boost\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -48,9 +48,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Program Files\boost13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Program Files\boost13\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,17 +72,42 @@
   <ItemGroup>
     <ClInclude Include="..\Public\BaseHeader.h" />
     <ClInclude Include="..\Public\Kerner\ApplicationImp.h" />
-    <ClInclude Include="..\Public\Kerner\CPoint3D.h" />
+    <ClInclude Include="..\Public\Kerner\AttributeImp.h" />
+    <ClInclude Include="..\Public\Kerner\IConfigFileUtil.h" />
+    <ClInclude Include="..\Public\Kerner\Math\DoublePoint2D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\DoublePoint3D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\FloatPoint2D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\FloatPoint3D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\IntPoint2D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\IntPoint3D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\Math.h" />
+    <ClInclude Include="..\Public\Kerner\Math\ShortPoint2D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\SignedCharPoint2D.h" />
+    <ClInclude Include="..\Public\Kerner\Math\SimViewMath.h" />
+    <ClInclude Include="..\Public\Kerner\Point3D.h" />
     <ClInclude Include="..\Public\Kerner\DynamicLib.h" />
+    <ClInclude Include="..\Public\Kerner\EntityImp.h" />
     <ClInclude Include="..\Public\Kerner\Expection.h" />
     <ClInclude Include="..\Public\Kerner\IApplication.h" />
+    <ClInclude Include="..\Public\Kerner\IAttribute.h" />
+    <ClInclude Include="..\Public\Kerner\IAttributeItem.h" />
+    <ClInclude Include="..\Public\Kerner\IDrawable.h" />
+    <ClInclude Include="..\Public\Kerner\IDrawAttribute.h" />
+    <ClInclude Include="..\Public\Kerner\IDrawManager.h" />
     <ClInclude Include="..\Public\Kerner\IDynLibManage.h" />
     <ClInclude Include="..\Public\Kerner\IEntity.h" />
+    <ClInclude Include="..\Public\Kerner\IBaseAttribute.h" />
+    <ClInclude Include="..\Public\Kerner\IEntityBaseFactoty.h" />
+    <ClInclude Include="..\Public\Kerner\IEntityFactoryType.h" />
     <ClInclude Include="..\Public\Kerner\ILog.h" />
     <ClInclude Include="..\Public\Kerner\ILogManage.h" />
+    <ClInclude Include="..\Public\Kerner\IMessage.h" />
+    <ClInclude Include="..\Public\Kerner\IMessageManage.h" />
     <ClInclude Include="..\Public\Kerner\IPlugin.h" />
     <ClInclude Include="..\Public\Kerner\IPluginManage.h" />
     <ClInclude Include="..\Public\Kerner\IRenderable.h" />
+    <ClInclude Include="..\Public\Kerner\IState.h" />
+    <ClInclude Include="..\Public\Kerner\IStateMachine.h" />
     <ClInclude Include="..\Public\Kerner\Kerner.h" />
     <ClInclude Include="..\Public\Kerner\Plugin.h" />
     <ClInclude Include="..\Public\Kerner\PluginImp.h" />
@@ -91,9 +118,15 @@
     <ClInclude Include="..\Public\ThreadDepend.h" />
     <ClInclude Include="..\Public\Tool.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="AttributeItem.h" />
+    <ClInclude Include="BaseAttribute.h" />
+    <ClInclude Include="CandidatasManager.h" />
     <ClInclude Include="ComEnumerator.h" />
-    <ClInclude Include="CPoint2D.h" />
+    <ClInclude Include="ConfigFileUtil.h" />
+    <ClInclude Include="Point2D.h" />
     <ClInclude Include="DynLibManage.h" />
+    <ClInclude Include="EntityFactoryManager.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="GUID.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LogManage.h" />
@@ -101,9 +134,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AttributeItem.cpp" />
+    <ClCompile Include="BaseAttribute.cpp" />
+    <ClCompile Include="CandidatasManager.cpp" />
     <ClCompile Include="ComEnumerator.cpp" />
+    <ClCompile Include="ConfigFileUtil.cpp" />
     <ClCompile Include="DynamicLib.cpp" />
     <ClCompile Include="DynLibManage.cpp" />
+    <ClCompile Include="EntityFactoryManager.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Expection.cpp" />
     <ClCompile Include="GUID.cpp" />
     <ClCompile Include="Log.cpp" />

@@ -6,6 +6,8 @@
 #include "DynLibManage.h"
 #include "PluginManage.h"
 #include "GUID.h"
+#include "AttributeItem.h"
+#include "ConfigFileUtil.h"
 #include "Application.h"
 
 namespace SimView
@@ -15,7 +17,8 @@ namespace SimView
 		m_pILogManage(NULL),
 		m_pIPluginManage(NULL),
 		m_pIDynLibManage(NULL),
-		m_pComEnumerator(NULL)
+		m_pComEnumerator(NULL),
+		m_strModuleDir("")
 	{
 		Init();
 	}
@@ -52,10 +55,61 @@ namespace SimView
 		return (llGuid);
 	}
 
-	// 创建实例
-	IApplication* CreateApplication(void)
+	IAttributeItem* CApplication::CreateAttributeItem(IAttribute* pIAttribute, const SVString& strItemName, \
+		const SVString& strText, const SVString& strUntil, \
+		const Variant& var, const Contrl ct /*= CTRL_SPINBOX*/)
 	{
-		return (new CApplication);
+		IAttributeItem* pItem = new CAttributeItem(pIAttribute, strItemName, strText, strUntil, var);
+		if (NULL != pItem)
+		{
+			pItem->SetCtrlType(ct);
+		}
+
+		// 返回有效值
+		return (pItem);
+	}
+
+	// 创建配置文件操作类
+	IConfigFileUtil* CApplication::CreateConfigFileUtil(void)
+	{
+		return (new CConfigFileUtil);
+	}
+
+	// 获得可执行程序路径
+	SVString CApplication::GetModulePath(void) const
+	{
+		return (m_strModuleDir);
+	}
+
+	// 设置可执行程序路径
+	void CApplication::SetModuleDir(const SVString& strModuleDir)
+	{
+		if (strModuleDir.empty())
+		{
+			SIMVIEW_EXCEPT(CSVExpection::ERR_FILE_NOT_FOUND, "可执行程序路径为空", "SetModuleDir");
+		}
+
+		// 查找最后一个 ‘/’
+		const int nPos = strModuleDir.find_last_of('\\');
+		if (-1 == nPos)
+		{
+			return ;
+		}
+
+		// 获得路径
+		SVString str = strModuleDir.substr(0, nPos);
+
+		// 当前路径
+		ILogManage::GetSingleton().RecordLog("可执行程序当前路径为:" + str);
+		m_strModuleDir = str;
+	}
+
+	// 创建实例
+	IApplication* CreateApplication(int argc, char *argv[])
+	{
+		CApplication* pApplication = new CApplication;
+		pApplication->SetModuleDir(argv[0]);
+		return (pApplication);
 	}
 
 }

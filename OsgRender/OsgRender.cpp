@@ -1,6 +1,5 @@
 #define OSGRENDER_DLL
 
-#include <windows.h>
 #include "../Public/Kerner/Kerner.h"
 #include "../Public/OsgRender/OsgRender.h"
 #include "OsgViewer.h"
@@ -10,6 +9,7 @@
 #pragma comment(lib, "osgd.lib")
 #pragma comment(lib, "osgViewerd.lib")
 #pragma comment(lib, "osgGAd.lib")
+#pragma comment(lib, "../Debug/Kerner.lib")
 
 namespace SimView
 {
@@ -67,7 +67,13 @@ namespace SimView
 		m_pOsgViewer->Create(pIOsgViewConfig);
 	}
 
-	void COsgRender::AddRenderObj(void* pRenderObj, const SVString& strViewName /*= "MainView"*/)
+	// »ñµÃÊÓÍ¼
+	IOsgView* COsgRender::GetView(const SVString& strViewName) const
+	{
+		return(m_pOsgViewer->GetView(strViewName));
+	}
+
+	void COsgRender::AddRenderObj(DrawObj* pRenderObj, const SVString& strViewName /*= "MainView"*/)
 	{
 		IOsgView* pIOsgView = m_pOsgViewer->GetView(strViewName);
 		if (NULL == pIOsgView)

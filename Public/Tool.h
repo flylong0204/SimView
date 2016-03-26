@@ -47,9 +47,9 @@ change outher :
 
 	// 核心导入导出关键字
 #ifdef SIMVIEW_KERNERLIB
-#define KERNER_DLL SIMVIEW_EXPORT
+#define KERNER_EXPORT SIMVIEW_EXPORT
 #else
-#define KERNER_DLL SIMVIEW_IMPORT
+#define KERNER_EXPORT SIMVIEW_IMPORT
 
 #endif
 

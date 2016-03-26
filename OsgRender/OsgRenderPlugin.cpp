@@ -5,8 +5,6 @@
 #include "OsgRender.h"
 #include "OsgRenderPlugin.h"
 
-#pragma comment(lib, "../Debug/Kerner.lib")
-
 namespace SimView
 {
 	// ¹¹Ôìº¯Êý

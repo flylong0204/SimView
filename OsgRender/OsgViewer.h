@@ -12,7 +12,7 @@ change outher :
 
 #pragma once
 
-#include <map>
+#include <vector>
 #include <windows.h>
 
 namespace osgViewer
@@ -53,7 +53,7 @@ namespace SimView
 		void RemoveView(COsgView* pOsgView);
 
 	protected:
-		typedef std::map<SVString, COsgView*> ListOsgView;
+		typedef std::vector<COsgView*> ListOsgView;
 	private:
 		ListOsgView m_lstOsgView; // 视图集合对象
 		osgViewer::CompositeViewer* m_pCompositeViewer; // 视图集合

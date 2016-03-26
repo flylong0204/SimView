@@ -28,18 +28,22 @@ namespace SimView
 	public: 
 		// 添加节点
 		virtual void AddRenderObj(void* pRenderObj);
+		// 添加相机控制器
+		virtual void AddCameraManipulator(const SVString& strName, CameraManip* pCameraManipulator);
+		// 选择操作器
+		virtual void SelectCameraManipulator(const SVString& strName);
 
 	public:
 		// 初始化操作器
 		void InitManipulator(void);
 		// 初始化相机
 		void InitCamera(void);
+		// 获得视图
+		virtual SVView* GetView(void) const;
 
 	public:
 		// 获得名称
 		SVString GetName(void) const;
-		// 获得视图
-		osgViewer::View* GetView(void) const;
 
 	private:
 		osg::Group* m_pGroup; // 跟节点

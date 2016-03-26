@@ -68,7 +68,7 @@ namespace SimView
 	//////////////////////////////////////////////////////////////////////////
 
 	// 插件基类
-	class KERNER_DLL IPlugin
+	class KERNER_EXPORT IPlugin
 	{
 	public:
 		// 析构函数

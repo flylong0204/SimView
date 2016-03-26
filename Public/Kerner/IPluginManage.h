@@ -17,7 +17,7 @@ namespace SimView
 	class IComFaceBase;
 	class IPlugin;
 
-	class KERNER_DLL IPluginManage : public CSingleton<IPluginManage>
+	class KERNER_EXPORT IPluginManage : public CSingleton<IPluginManage>
 	{
 	public:
 		// Îö¹¹º¯Êý  

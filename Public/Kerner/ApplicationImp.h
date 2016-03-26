@@ -13,7 +13,7 @@ change outher :
 namespace SimView
 {
 	template <typename T>
-	class  CApplicationImp
+	class CApplicationImp
 	{
 	public:
 		// »ñµÃ²å¼þ

@@ -77,14 +77,14 @@ namespace SimView
 	}
 
 	template<typename T>
-	CPoint2D<T>::CPoint2D(const CPoint2D& other)
+	CPoint2D<T>::CPoint2D(const CPoint2D<T>& other)
 		:m_tX(other.m_tX), m_tY(other.m_tY)
 	{
 
 	}
 
 	template<typename T>
-	CPoint2D& CPoint2D<T>::operator=(const CPoint2D& other)
+	CPoint2D<T>& CPoint2D<T>::operator=(const CPoint2D<T>& other)
 	{
 		m_tX = other.m_tX;
 		m_tY = other.m_tY;
@@ -93,42 +93,42 @@ namespace SimView
 
 	// ==·ûºÅ
 	template<typename T>
-	bool CPoint2D<T>::operator==(const CPoint2D& other) const
+	bool CPoint2D<T>::operator==(const CPoint2D<T>& other) const
 	{
 		return ((m_tX == other.m_tX) && (m_tY == other.m_tY));
 	}
 
 	// != ·ûºÅ
 	template<typename T>
-	bool CPoint2D<T>::operator!=(const CPoint2D& other) const
+	bool CPoint2D<T>::operator!=(const CPoint2D<T>& other) const
 	{
 		return ((m_tX != other.m_tX) && (m_tY != other.m_tY));
 	}
 
 	// < ·ûºÅ
 	template<typename T>
-	bool CPoint2D<T>::operator<(const CPoint2D& other) const
+	bool CPoint2D<T>::operator<(const CPoint2D<T>& other) const
 	{
 		return ((m_tX < other.m_tX) && (m_tY < other.m_tY));
 	}
 
 	// µã³Ë
 	template<typename T>
-	T CPoint2D<T>::operator*(const CPoint2D& other) const
+	T CPoint2D<T>::operator*(const CPoint2D<T>& other) const
 	{
 		return (m_tX * other.m_tX + m_tY * other.m_tY);
 	}
 
 	// ²æ³Ë
 	template<typename T>
-	CPoint2D CPoint2D<T>::operator* (const T value) const
+	CPoint2D<T> CPoint2D<T>::operator* (const T value) const
 	{
 		return (CPoint2D(m_tX * value, m_tY * value));
 	}
 
 	// *=
 	template<typename T>
-	CPoint2D& CPoint2D<T>::operator*=(const T value) 
+	CPoint2D<T>& CPoint2D<T>::operator*=(const T value)
 	{
 		m_tX *= value;
 		m_tY *= value;
@@ -137,7 +137,7 @@ namespace SimView
 
 	// /
 	template<typename T>
-	CPoint2D CPoint2D<T>::operator/(const T value) const
+	CPoint2D<T> CPoint2D<T>::operator/(const T value) const
 	{
 		return (CPoint2D(m_tX / value, m_tY / value));
 	}
@@ -145,7 +145,7 @@ namespace SimView
 
 	// /=
 	template<typename T>
-	CPoint2D& CPoint2D<T>::operator/=(const T value)
+	CPoint2D<T>& CPoint2D<T>::operator/=(const T value)
 	{
 		m_tX /= value;
 		m_tY /= value;
@@ -154,14 +154,14 @@ namespace SimView
 
 	// +
 	template<typename T>
-	CPoint2D CPoint2D<T>::operator+(const CPoint2D& other) const
+	CPoint2D<T> CPoint2D<T>::operator+(const CPoint2D<T>& other) const
 	{
 		return (CPoint2D(m_tX + other.m_tX, m_tY + other.m_tY));
 	}
 
 	// += 
 	template<typename T>
-	CPoint2D& CPoint2D<T>::operator +=(const CPoint2D& other)
+	CPoint2D<T>& CPoint2D<T>::operator +=(const CPoint2D<T>& other)
 	{
 		m_tX += other.m_tX;
 		m_tY += other.m_tY;
@@ -170,14 +170,14 @@ namespace SimView
 
 	// -
 	template<typename T>
-	CPoint2D CPoint2D<T>::operator-(const CPoint2D& other) const
+	CPoint2D<T> CPoint2D<T>::operator-(const CPoint2D<T>& other) const
 	{
 		return (CPoint2D(m_tX - other.m_tX, m_tY - other.m_tY));
 	}
 
 	// -= 
 	template<typename T>
-	CPoint2D& CPoint2D::operator -=(const CPoint2D& other)
+	CPoint2D<T>& CPoint2D<T>::operator -=(const CPoint2D<T>& other)
 	{
 		m_tX -= other.m_tX;
 		m_tY -= other.m_tY;
@@ -186,7 +186,7 @@ namespace SimView
 
 	// - È¡·´
 	template<typename T>
-	const CPoint2D CPoint2D<T>::operator-() const
+	const CPoint2D<T> CPoint2D<T>::operator-() const
 	{
 		return (CPoint2D(-m_tX, -m_tY));
 	}

@@ -20,6 +20,8 @@
 #include <list>
 #include <map>
 
+#include <boost/any.hpp>
+
 // 依赖平台头文件
 #include "Platform.h"
 #include "Tool.h"
@@ -50,6 +52,9 @@ namespace SimView
 	// 定义类型
 	typedef long long long_l;
 	typedef unsigned long long ulong_l;
+	typedef unsigned int uint_l;
+
+	typedef boost::any Variant;
 
 }
 #endif

@@ -12,7 +12,7 @@ change outher :
 
 namespace SimView
 {
-	class KERNER_DLL ILogManage : public CSingleton<ILogManage>
+	class KERNER_EXPORT ILogManage : public CSingleton<ILogManage>
 	{
 	public:
 		virtual ~ILogManage(void) { }

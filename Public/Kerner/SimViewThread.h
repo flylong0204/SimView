@@ -18,7 +18,7 @@ namespace boost
 
 namespace SimView
 {
-	class KERNER_DLL CSimViewThread
+	class KERNER_EXPORT CSimViewThread
 	{
 	public:
 		// ¹¹Ôìº¯Êý

@@ -161,6 +161,5 @@ namespace SimView
 	}
 
 	// п╤тькЫсп╡Е╪Ч
-	
 
 }

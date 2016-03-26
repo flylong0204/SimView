@@ -22,7 +22,7 @@ namespace SimView
 		ListOsgView::iterator itor = m_lstOsgView.begin();
 		for (; m_lstOsgView.end() != itor; ++itor)
 		{
-			RemoveView(itor->second);
+			RemoveView(*itor);
 		}
 
 		SIMVIEW_DELETE(m_pCompositeViewer);
@@ -31,22 +31,31 @@ namespace SimView
 	// 添加视图
 	void COsgViewer::AddOsgView(COsgView* pOsgView)
 	{
-		m_pCompositeViewer->addView(pOsgView->GetView());
-		m_lstOsgView[pOsgView->GetName()] = pOsgView;
+		osgViewer::View* pView = static_cast<osgViewer::View*>(pOsgView->GetView());
+		if (NULL == pView)
+		{
+			SIMVIEW_EXCEPT(CSVExpection::ERR_CONVERT_FAILD, "类型转换失败", "AddOsgView");
+		}
+		m_pCompositeViewer->addView(pView);
+		m_lstOsgView.push_back(pOsgView);
 	}
 
 	// 获得视图对象
 	IOsgView* COsgViewer::GetView(const SVString& strName) const
 	{
 		// 查询当前结果
-		ListOsgView::const_iterator cstItor = m_lstOsgView.find(strName);
-		if (NULL == cstItor->second)
+		ListOsgView::const_iterator cstItor = m_lstOsgView.begin();
+		for (; m_lstOsgView.end() != cstItor; ++cstItor)
 		{
-			ILogManage::GetSingleton().RecordLog("视图" + strName + "不存在");
-			return (NULL);
+			if (0 == strName.compare((*cstItor)->GetName()))
+			{
+				return (*cstItor);
+			}
 		}
-
-		return (cstItor->second);
+		
+		// 不存在 
+		ILogManage::GetSingleton().RecordLog("视图" + strName + "不存在");
+		return (NULL);
 	}
 
 	// 获得组合视图

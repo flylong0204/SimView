@@ -28,8 +28,10 @@ namespace SimView
 	public:
 		// 创建视图
 		virtual void CreateView(IOsgViewConfig* pIOsgViewConfig);
+		// 获得视图
+		virtual IOsgView* GetView(const SVString& strViewName) const;
 		// 添加渲染节点
-		virtual void AddRenderObj(void* pRenderObj, const SVString& strViewName = "MainView") ;
+		virtual void AddRenderObj(DrawObj* pRenderObj, const SVString& strViewName = "MainView");
 
 	public:
 		// 设置组件名称

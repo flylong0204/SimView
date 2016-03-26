@@ -16,12 +16,12 @@
     <Filter Include="Public">
       <UniqueIdentifier>{aab8fe7e-0e9c-4783-8ff3-5d949860a81f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Public\Math">
+      <UniqueIdentifier>{9cc6402d-b5c7-484c-8bf5-68b553341362}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Public\Kerner\DynamicLib.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Public\Kerner\Expection.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="PluginManage.h">
@@ -99,14 +99,110 @@
     <ClInclude Include="..\Public\BaseHeader.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="CPoint2D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Public\Kerner\CPoint3D.h">
-      <Filter>Public</Filter>
-    </ClInclude>
     <ClInclude Include="..\Public\Kerner\IEntity.h">
       <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IDrawable.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityFactoryManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IEntityBaseFactoty.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IEntityFactoryType.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IAttribute.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IAttributeItem.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IBaseAttribute.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IDrawAttribute.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IDrawManager.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\AttributeImp.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\EntityImp.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Expection.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IStateMachine.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IState.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IMessage.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IMessageManage.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Point3D.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Point2D.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="AttributeItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CandidatasManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAttribute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\FloatPoint3D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\Math.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\FloatPoint2D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\IntPoint2D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\DoublePoint2D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\SignedCharPoint2D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\ShortPoint2D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\DoublePoint3D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\SimViewMath.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\Math\IntPoint3D.h">
+      <Filter>Public\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Kerner\IConfigFileUtil.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigFileUtil.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +234,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GUID.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityFactoryManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AttributeItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CandidatasManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseAttribute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigFileUtil.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

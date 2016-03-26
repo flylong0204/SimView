@@ -74,8 +74,15 @@ BOOL CMainUIApp::InitInstance()
 
 	CWinAppEx::InitInstance();
 
-	m_pIApp = SimView::CreateApplication();
+	HMODULE module = GetModuleHandle(0);
+	char pFileName[MAX_PATH];
+	GetModuleFileName(module, pFileName, MAX_PATH);
+	char** strModule = new char*;
+	*strModule = pFileName;
+	m_pIApp = SimView::CreateApplication(1, strModule);
+	delete strModule;
 	SimView::IPluginManage::GetSingleton().LoadCom("../Debug/OsgRender.dll");
+	SimView::IPluginManage::GetSingleton().LoadCom("../Debug/OsgEarth.dll");
 
 
 	// ≥ı ºªØ OLE ø‚

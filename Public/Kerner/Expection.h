@@ -14,7 +14,7 @@
 
 namespace SimView
 {
-	class KERNER_DLL CSVExpection : public std::exception
+	class KERNER_EXPORT CSVExpection : public std::exception
 	{
 	public:
 		enum ExceptionCodes {
@@ -78,7 +78,7 @@ namespace SimView
 	};
 
 	// 未实现异常
-	class KERNER_DLL CUnimplementedExpection : public CSVExpection
+	class KERNER_EXPORT CUnimplementedExpection : public CSVExpection
 	{
 	public:
 		 CUnimplementedExpection(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -91,7 +91,7 @@ namespace SimView
 	};
 
 	// 文件不存在异常
-	class KERNER_DLL CFileNotFoundException : public CSVExpection
+	class KERNER_EXPORT CFileNotFoundException : public CSVExpection
 	{
 	public:
 		CFileNotFoundException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -103,7 +103,7 @@ namespace SimView
 	};
 
 	// IO流异常
-	class KERNER_DLL CIOException : public CSVExpection
+	class KERNER_EXPORT CIOException : public CSVExpection
 	{
 	public: 
 		CIOException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -116,7 +116,7 @@ namespace SimView
 	};
 
 	// 无效状态异常
-	class KERNER_DLL CInvalidStateException : public CSVExpection
+	class KERNER_EXPORT CInvalidStateException : public CSVExpection
 	{
 	public:
 		 CInvalidStateException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -126,7 +126,7 @@ namespace SimView
 	};
 
 	// 无效参数
-	class KERNER_DLL CInvalidParametersException : public CSVExpection
+	class KERNER_EXPORT CInvalidParametersException : public CSVExpection
 	{
 	public:
 		 CInvalidParametersException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -136,7 +136,7 @@ namespace SimView
 	};
 
 	// 无效项
-	class KERNER_DLL CItemIdentityException : public CSVExpection
+	class KERNER_EXPORT CItemIdentityException : public CSVExpection
 	{
 	public:
 		 CItemIdentityException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -146,7 +146,7 @@ namespace SimView
 	};
 
 	// 内部错误异常
-	class KERNER_DLL CInternalErrorException : public CSVExpection
+	class KERNER_EXPORT CInternalErrorException : public CSVExpection
 	{
 	public:
 		 CInternalErrorException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -156,7 +156,7 @@ namespace SimView
 	};
 
 	// 渲染接口异常
-	class KERNER_DLL CRenderingAPIException : public CSVExpection
+	class KERNER_EXPORT CRenderingAPIException : public CSVExpection
 	{
 	public:
 		 CRenderingAPIException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -166,7 +166,7 @@ namespace SimView
 	};
 
 	// 运行访问异常
-	class KERNER_DLL CRuntimeAssertionException : public CSVExpection
+	class KERNER_EXPORT CRuntimeAssertionException : public CSVExpection
 	{
 	public:
 		 CRuntimeAssertionException(int inNumber, const SVString& inDescription, const SVString& inSource, \
@@ -176,7 +176,7 @@ namespace SimView
 	};
 
 	// 转换失败
-	class KERNER_DLL CConvertException : public CSVExpection
+	class KERNER_EXPORT CConvertException : public CSVExpection
 	{
 	public:
 		CConvertException(int inNumber, const SVString& inDescription, const SVString& inSource, \
